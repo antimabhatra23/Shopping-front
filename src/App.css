@@ -1,32 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: "Raleway", sans-serif;
+    /* font-family: "Raleway", sans-serif; */
+    font-family: "Mier book";
+    box-sizing: border-box;
 }
 
-nav {
-    background-color: #e84666;
-    padding: 1rem;
-}
-
-nav ul {
-    list-style: none;
+.nav {
     display: flex;
-    justify-content: space-evenly;
-}
-
-nav ul li {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f06161; 
+    /* border-bottom: 1px solid #dee2e6;  */
+  }
+  
+  .nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-left {
+    flex: 1;
+  }
+  
+  .nav-right {
+    flex: 1;
+    justify-content: flex-end;
+  }
+  
+  .nav-link {
     margin: 0 1rem;
-}
-
-nav ul li a {
-    color: white;
     text-decoration: none;
-    font-size: 17px;
-}
-
-nav ul li a:hover {
+    color: #fff; 
+    font-size: 18px;
+  }
+  
+  .logout-button {
+    background: none;
+    border: none;
+    color: #fff; 
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .logout-button:hover {
     text-decoration: underline;
-}
+  }
+  

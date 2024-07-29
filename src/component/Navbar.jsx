@@ -1,22 +1,39 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 
-const Navbar = () => {
-  return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/signup">Signup</Link>
-        </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+  const navigate = useNavigate();
 
-        <li>
-          <Link to="/add-product">Add Product</Link>
-        </li>
-      </ul>
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.removeItem('token'); // Remove token on logout
+    navigate("/");
+  };
+
+  const token = localStorage.getItem("token");
+
+  return (
+    <nav className="nav">
+      <div className="nav-left">
+        {isLoggedIn || token ? (
+          <Link to="/add-product" className="nav-link">
+            Add Product
+          </Link>
+        ) : null}
+      </div>
+      <div className="nav-right">
+        {!isLoggedIn && !token ? (
+          <>
+            <Link to="/signup" className="nav-link">Signup</Link>
+            <Link to="/login" className="nav-link">Login</Link>
+          </>
+        ) : (
+          <button onClick={handleLogout} className="logout-button">
+            Logout
+          </button>
+        )}
+      </div>
     </nav>
   );
 };

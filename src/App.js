@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Signup from "./component/signup/Signup";
 import Login from "./component/login/Login";
@@ -7,12 +7,17 @@ import AddProductForm from "./component/products/AddProductForm";
 import Product from "./component/products/Product";
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Router>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Routes>
         <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login setIsLoggedIn={setIsLoggedIn} />}
+        />
 
         <Route path="/" element={<Product />} />
         <Route path="/add-product" element={<AddProductForm />} />

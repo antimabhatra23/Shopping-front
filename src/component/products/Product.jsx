@@ -14,14 +14,14 @@ const Product = () => {
   const loadProducts = async () => {
     try {
       const response = await axios.get("https://shopping-backend-beryl.vercel.app/products");
-      console.log({ response });
+      // console.log({ response });
       setProductList(response?.data?.products);
     } catch (error) {
       toast.error("");
     }
   };
 
-  console.log({ productList });
+  // console.log({ productList });
 
   return (
     <div className="product-container">

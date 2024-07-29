@@ -3,8 +3,10 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './login.css';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -14,6 +16,7 @@ const Login = () => {
             const response = await axios.post('https://shopping-backend-beryl.vercel.app/api/login', { email, password });
             toast.success(response.data.message);  // Show success toast
             localStorage.setItem('token', response.data.token);
+            navigate("/")
         } catch (error) {
             toast.error(error.response?.data?.error || 'An error occurred');  // Show error toast
         }
