@@ -16,6 +16,7 @@ const Login = () => {
             const response = await axios.post('https://shopping-backend-beryl.vercel.app/api/login', { email, password });
             toast.success(response.data.message);  // Show success toast
             localStorage.setItem('token', response.data.token);
+            console.log(response.data);
             navigate("/")
         } catch (error) {
             toast.error(error.response?.data?.error || 'An error occurred');  // Show error toast
