@@ -17,7 +17,7 @@ const AddProductForm = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        "https://shopping-backend-beryl.vercel.app/products/add-product",
+        "http://localhost:5000/products/add-product",
         data
       );
 

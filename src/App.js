@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Signup from "./component/signup/Signup";
 import Login from "./component/login/Login";
 import Navbar from "./component/Navbar";
 import AddProductForm from "./component/products/AddProductForm";
