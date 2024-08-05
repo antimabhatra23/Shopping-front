@@ -17,9 +17,15 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     <nav className="nav">
       <div className="nav-left">
         {isLoggedIn || token ? (
-          <Link to="/add-product" className="nav-link">
-            Add Product
-          </Link>
+          <>
+            <Link to="/add-product" className="nav-link">
+              Add Product
+            </Link>
+
+            <Link to="/orders" className="nav-link">
+              Orders
+            </Link>
+          </>
         ) : null}
       </div>
       <div className="nav-right">

@@ -4,6 +4,7 @@ import Login from "./component/login/Login";
 import Navbar from "./component/Navbar";
 import AddProductForm from "./component/products/AddProductForm";
 import Product from "./component/products/Product";
+import Order from "./component/order/Order";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,6 +19,7 @@ const App = () => {
         />
 
         <Route path="/" element={<Product />} />
+        <Route path="/orders" element={<Order />} />
         <Route path="/add-product" element={<AddProductForm />} />
       </Routes>
     </Router>

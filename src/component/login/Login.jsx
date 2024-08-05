@@ -3,7 +3,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './login.css';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate()
@@ -16,10 +16,9 @@ const Login = () => {
             const response = await axios.post('http://localhost:5000/api/login', { email, password });
             toast.success(response.data.message);  // Show success toast
             localStorage.setItem('token', response.data.token);
-            console.log(response.data);
-            navigate("/")
+            navigate('/')
         } catch (error) {
-            toast.error(error.response?.data?.error || 'An error occurred');  // Show error toast
+            toast.error(error.response?.data?.error || 'An error occurred');  // Show general error toast
         }
     };
 
