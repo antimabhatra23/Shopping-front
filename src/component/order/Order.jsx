@@ -44,7 +44,7 @@ const Order = () => {
         orderList?.length > 0 ? (
           orderList?.map((order, index) => (
             <div className="order-card" key={order._id || index}>
-              <h3>Order ID: {order._id}</h3>
+              <h3 className="Heading">Order ID: {order._id}</h3>
               <div className="order-details">
                 <div className="details-left">
                   <div>

@@ -1,50 +1,106 @@
+/* Universal styles */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Mier book";
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Mier Book", sans-serif; /* Ensure you have a fallback font */
+  box-sizing: border-box;
 }
 
+/* Navbar container */
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #f06161; 
-    /* border-bottom: 1px solid #dee2e6;  */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f06161;
+  color: #fff;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Left section of the navbar */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Right section of the navbar */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between items */
+}
+
+/* Navigation links */
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Navigation links hover effect */
+.nav-link:hover {
+  background-color: #d9534f;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+/* Logout button */
+.logout-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* Logout button hover effect */
+.logout-button:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .nav {
+      padding: 1rem;
   }
-  
-  .nav-left, .nav-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-left {
-    flex: 1;
-  }
-  
+
+  .nav-left,
   .nav-right {
-    flex: 1;
-    justify-content: flex-end;
+      flex-wrap: wrap; /* Allows wrapping of items */
+      gap: 0.5rem; /* Space between items */
   }
-  
-  .nav-link {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #fff; 
-    font-size: 18px;
-  }
-  
+
+  .nav-link,
   .logout-button {
-    background: none;
-    border: none;
-    color: #fff; 
-    cursor: pointer;
-    font-size: 18px;
-    padding: 0.5rem 1rem;
+      font-size: 16px; /* Adjust font size for smaller screens */
   }
-  
-  .logout-button:hover {
-    text-decoration: underline;
+}
+
+/* Optional: Mobile menu button for better accessibility on mobile */
+.menu-button {
+  display: none;
+}
+
+/* Show menu button on mobile screens */
+@media (max-width: 768px) {
+  .menu-button {
+      display: block;
+      background: #f06161;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
   }
-  
+
+  .menu-button:hover {
+      background-color: #d9534f;
+  }
+}
