@@ -13,7 +13,7 @@ const Order = () => {
 
   const loadOrders = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/orders");
+      const response = await axios.get("https://clothing-backend-two.vercel.app/orders");
       if (Array.isArray(response.data)) {
         setOrderList(response.data);
       } else {
@@ -28,7 +28,7 @@ const Order = () => {
 
   const updateOrderStatus = async (orderId, status) => {
     try {
-      await axios.put(`http://localhost:5000/orders/${orderId}`, { status });
+      await axios.put(`https://clothing-backend-two.vercel.app/orders/${orderId}`, { status });
       toast.success(`Order status updated to ${status}`);
       loadOrders(); // Reload orders to get the updated list
     } catch (error) {

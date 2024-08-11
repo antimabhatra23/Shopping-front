@@ -40,7 +40,7 @@ const AddProductForm = () => {
       }
 
       const response = await axios.post(
-        "http://localhost:5000/products/add-product",
+        "https://clothing-backend-two.vercel.app/products/add-product",
         formData,
         {
           headers: {
@@ -69,7 +69,7 @@ const AddProductForm = () => {
           <label>Product Name</label>
           <input
             type="text"
-            placeholder="Jeans"
+            placeholder=""
             {...register("name", { required: "Product name is required" })}
           />
           {errors.name && <p>{errors.name.message}</p>}
@@ -108,7 +108,7 @@ const AddProductForm = () => {
           <label>Description</label>
           <input
             type="text"
-            placeholder="This is a denim jeans"
+            placeholder=""
             {...register("description", { required: "Description is required" })}
           />
           {errors.description && <p>{errors.description.message}</p>}
@@ -118,7 +118,7 @@ const AddProductForm = () => {
           <label>Price</label>
           <input
             type="number"
-            placeholder="500"
+            placeholder=""
             {...register("price", { required: "Price is required" })}
           />
           {errors.price && <p>{errors.price.message}</p>}
@@ -127,6 +127,7 @@ const AddProductForm = () => {
         <div>
           <label>Category</label>
           <select {...register("category", { required: "Category is required" })}>
+            <option value="all">All</option>
             <option value="men">Men</option>
             <option value="women">Women</option>
             <option value="kids">Kids</option>
