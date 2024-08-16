@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://clothing-backend-two.vercel.app/api/login",
+        "http://localhost:5000/api/login",
         { email, password }
       );
 
