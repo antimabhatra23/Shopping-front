@@ -13,7 +13,7 @@ const Product = () => {
 
   const loadProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/products");
+      const response = await axios.get("https://clothing-backend-two.vercel.app/products");
       // console.log({ response });
       setProductList(response?.data?.products);
     } catch (error) {

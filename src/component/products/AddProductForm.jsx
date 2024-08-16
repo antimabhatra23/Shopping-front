@@ -40,7 +40,7 @@ const AddProductForm = () => {
       }
 
       const response = await axios.post(
-        "http://localhost:5000/products/add-product",
+        "https://clothing-backend-two.vercel.app/products/add-product",
         formData,
         {
           headers: {
