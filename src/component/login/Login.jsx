@@ -14,8 +14,9 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://clothing-backend-two.vercel.app/login",
+        "https://clothing-backend-two.vercel.app/api/login",
         { email, password }
+        
       );
 
       if (response?.status === 200) {
